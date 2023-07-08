@@ -10,4 +10,7 @@ export class UserWhereUniqueInput {
 
     @Field(() => String, {nullable:true})
     email?: string;
+
+    @Field(() => String, {nullable:true})
+    document?: string;
 }

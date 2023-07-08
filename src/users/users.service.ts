@@ -13,8 +13,8 @@ export class UserService {
     return this.prisma.user.findMany();
   }
 
-  findOne(email: string): Promise<User> {
-    return this.prisma.user.findFirst({ where:{email} });
+  async findOne(data: Prisma.UserWhereUniqueInput): Promise<User> {
+    return this.prisma.user.findUnique({ where:data });
   }
 
   create(data: CreateUserInput) {

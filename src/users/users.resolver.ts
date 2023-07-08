@@ -7,7 +7,9 @@ import { UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { Roles } from 'src/auth/decorators/roles.decorator';
 import { UserService } from './users.service';
-
+import { FindUserWhereInput } from './dto/find-all-user.input';
+import { UpdateUserInput } from './dto/update-user.input';
+import { FindUserInput } from './dto/find-user.input';
 @Resolver(() => User)
 export class UsersResolver {
   constructor(private readonly usersService: UserService) {}
@@ -25,8 +27,8 @@ export class UsersResolver {
   }
 
   @Query(() => User, { name: 'user' })
-  findOne(@Args('email') email: string): Promise<User> {
-    return this.usersService.findOne(email);
+  findOne(@Args('findUserInput') findUserInput: FindUserInput) {
+    return this.usersService.findOne(findUserInput);
   }
 
   @Mutation(() => User)

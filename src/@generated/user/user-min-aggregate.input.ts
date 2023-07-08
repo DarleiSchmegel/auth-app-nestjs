@@ -8,16 +8,16 @@ export class UserMinAggregateInput {
     id?: true;
 
     @Field(() => Boolean, {nullable:true})
-    email?: true;
-
-    @Field(() => Boolean, {nullable:true})
     name?: true;
 
     @Field(() => Boolean, {nullable:true})
-    password?: true;
+    email?: true;
 
     @Field(() => Boolean, {nullable:true})
-    username?: true;
+    document?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    password?: true;
 
     @Field(() => Boolean, {nullable:true})
     role?: true;

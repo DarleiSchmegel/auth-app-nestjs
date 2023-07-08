@@ -9,16 +9,16 @@ export class UserMaxOrderByAggregateInput {
     id?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
-    email?: keyof typeof SortOrder;
-
-    @Field(() => SortOrder, {nullable:true})
     name?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
-    password?: keyof typeof SortOrder;
+    email?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
-    username?: keyof typeof SortOrder;
+    document?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    password?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
     role?: keyof typeof SortOrder;

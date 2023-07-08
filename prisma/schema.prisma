@@ -12,14 +12,14 @@ generator client {
 
 generator nestgraphql {
   provider = "node node_modules/prisma-nestjs-graphql"
-  output = "../src/@generated"
+  output   = "../src/@generated"
 }
 
 model User {
-  id    Int     @default(autoincrement()) @id
-  email String  @unique
-  name  String?
+  id       Int     @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  document String  @unique
   password String
-  username String
-  role String
+  role     String
 }

@@ -14,16 +14,16 @@ export class UserGroupBy {
     id!: number;
 
     @Field(() => String, {nullable:false})
+    name!: string;
+
+    @Field(() => String, {nullable:false})
     email!: string;
 
-    @Field(() => String, {nullable:true})
-    name?: string;
+    @Field(() => String, {nullable:false})
+    document!: string;
 
     @Field(() => String, {nullable:false})
     password!: string;
-
-    @Field(() => String, {nullable:false})
-    username!: string;
 
     @Field(() => String, {nullable:false})
     role!: string;

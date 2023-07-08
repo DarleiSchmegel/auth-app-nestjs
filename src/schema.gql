@@ -4,10 +4,10 @@
 
 type User {
   id: ID!
+  name: String!
   email: String!
-  name: String
+  document: String!
   password: String!
-  username: String!
   role: String!
 }
 
@@ -18,20 +18,26 @@ type LoginResponse {
 
 type Query {
   users: [User!]!
-  user(email: String!): User!
+  user(findUserInput: FindUserInput!): User!
+}
+
+input FindUserInput {
+  id: Int
+  email: String
+  document: String
 }
 
 type Mutation {
   create(createUserInput: CreateUserInput!): User!
   login(loginUserInput: LoginUserInput!): LoginResponse!
-  signup(signupUserInput: CreateUserInput!): User!
+  signup(signupUserInput: CreateUserInput!): LoginResponse!
 }
 
 input CreateUserInput {
+  name: String!
   email: String!
-  name: String
+  document: String!
   password: String!
-  username: String!
   role: String!
 }
 
